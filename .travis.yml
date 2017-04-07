@@ -5,10 +5,12 @@ before_install:
   - npm i -g npm@latest
   - sudo sysctl fs.inotify.max_user_watches=524288
 before_script:
-  - npm install git://github.com/kulshekhar/ts-jest.git#long-dir-name
-  - cd node_modules/ts-jest
+  - git clone https://github.com/kulshekhar/ts-jest tmp-ts-jest
+  - cd tmp-ts-jest
+  - git checkout long-dir-name
+  - npm install
   - npm run clean-build
-  - cd -
-  - npm ls --depth=0
+  - rm node_modules/ts-jest -rf
+  - mv tmp-ts-jest node_modules/ts-jest
   
 sudo: required
