@@ -10,6 +10,7 @@ before_script:
   - git checkout long-dir-name
   - npm install
   - npm run clean-build
+  - cd ..
   - rm node_modules/ts-jest -rf
   - mv tmp-ts-jest node_modules/ts-jest
   
