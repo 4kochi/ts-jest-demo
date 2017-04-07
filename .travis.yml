@@ -7,7 +7,7 @@ before_install:
 before_script:
   - npm install git://github.com/kulshekhar/ts-jest.git#long-dir-name
   - cd node_modules/ts-jest
-  - npm clean-build
+  - npm run clean-build
   - cd -
   - npm ls --depth=0
   
