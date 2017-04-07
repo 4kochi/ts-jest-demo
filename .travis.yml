@@ -6,7 +6,7 @@ node_js:
 before_install:
   - npm i -g npm@latest
   - sudo sysctl fs.inotify.max_user_watches=524288
-before_script"
+before_script:
   - npm install git://github.com/kulshekhar/ts-jest.git#long-dir-name
   - npm ls --depth=0
   
