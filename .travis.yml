@@ -1,10 +1,17 @@
 language: node_js
 node_js:
-  - "7"
   - "6"
-  - "4"
 before_install:
   - npm i -g npm@latest
   - sudo sysctl fs.inotify.max_user_watches=524288
-
+before_script:
+  - git clone https://github.com/kulshekhar/ts-jest tmp-ts-jest
+  - cd tmp-ts-jest
+  - git checkout long-dir-name
+  - npm install
+  - npm run clean-build
+  - cd ..
+  - rm node_modules/ts-jest -rf
+  - mv tmp-ts-jest node_modules/ts-jest
+  
 sudo: required
