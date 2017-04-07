@@ -8,6 +8,9 @@ before_install:
   - sudo sysctl fs.inotify.max_user_watches=524288
 before_script:
   - npm install git://github.com/kulshekhar/ts-jest.git#long-dir-name
+  - cd node_modules/ts-jest
+  - npm clean-build
+  - cd -
   - npm ls --depth=0
   
 sudo: required
